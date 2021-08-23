@@ -2,17 +2,23 @@
   <div id="circle"></div>
   <Navbar/>
   <Home/>
+  <Information/>
+  <Slider/>
 </template>
 
 <script>
 import Navbar from './components/Nav/Navbar.vue'
 import Home from './components/Home/Home.vue'
+import Information from './components/Information/Information.vue'
+import Slider from './components/Slider/Slider.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Home
+    Home,
+    Information,
+    Slider
   }
 }
 </script>

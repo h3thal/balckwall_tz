@@ -12,7 +12,8 @@
           Start for free
         </div>
       </div>
-      <img src="@/assets/home.png" alt="">
+      <img class="pc" src="@/assets/home.png" alt="">
+      <img class="mobile" src="@/assets/mobile.png" alt="">
     </div>
   </div>
 </template>
@@ -25,47 +26,75 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/__extends.scss';
+@import '@/assets/scss/__fonts.scss';
+@import '@/assets/scss/__mixin.scss';
 #home {
   height: 520px;
-  .home__block {
+  .wrapper {
+    position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    &-title {
-      color: $navyBlue;
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 48px;
-      line-height: 60px;
-      width: 498px;
-    }
-    &-subtitle {
-      color: $navyBlue;
-      font-family: Inter;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 17px;
-      line-height: 28px;
-      width: 484px;
-    }
-    &-button {
-      color: $navyBlue;
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 17px;
-      line-height: 21px;
-      background-color: $neonBlue;
-      width: 180px;
-      height: 66px;
-      border-radius: 6px;
+    .home__block {
+      height: 100%;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      cursor: pointer;
+      width: 50%;
+      @include lg {
+        text-align: center;
+        align-items: center;
+        margin: auto;
+      }
+      &-title {
+        color: $navyBlue;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 60px;
+        width: 498px;
+      }
+      &-subtitle {
+        color: $navyBlue;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 28px;
+        width: 484px;
+      }
+      &-button {
+        color: $navyBlue;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 21px;
+        background-color: $neonBlue;
+        width: 180px;
+        height: 66px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+    img.pc {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: flex;
+      @include lg {
+        display: none;
+      }
+    }
+    img.mobile {
+      display: none;
+      width: 300px;
+      margin: auto;
+      @include lg {
+        display: flex;
+      }
     }
   }
 }
